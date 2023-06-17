@@ -70,7 +70,7 @@ void View()
 
 void Reverse()
 {
-	struct node *prev,*current,*trav,*temp;
+	struct node *prev,*current,*trav;
 	prev=NULL; current=head; trav=NULL;
 	while(current!=NULL)
 	{
