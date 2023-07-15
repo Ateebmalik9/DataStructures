@@ -99,7 +99,6 @@ void Insert()
 	
 		if(trav==tail)// data item to stored after tail
 		{
-			temp->next=trav->next;
 			trav->next=temp;
 			tail=temp;
 		}
