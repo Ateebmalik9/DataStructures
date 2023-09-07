@@ -79,7 +79,7 @@ void Reverse()
 		prev=current;
 		current=trav;
 	}
-	head=tail;
+	tail=head;
 	head=prev;
 
 }
