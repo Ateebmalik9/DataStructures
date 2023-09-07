@@ -245,7 +245,7 @@ void reverse()
 		prev=current;
 		current=trav;
 	}
-	head1=tail;
+	tail=head1;
 	head1=prev;
 
 }
