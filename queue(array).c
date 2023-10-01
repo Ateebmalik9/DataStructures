@@ -51,7 +51,7 @@ int main()
 	while(1)
 	{
 		int ch;
-		printf("1 to enque 2 to deque 3 view 4 to peek: ");
+		printf("1 to enque 2 to deque 3 to view: ");
 		scanf("%d",&ch);
 		if(ch==1)
 		{
@@ -73,5 +73,12 @@ int main()
 		{
 			view();
 		}
+		
+		else
+		{
+			break;
+		}
 	}
 }
+
+
