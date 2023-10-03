@@ -20,6 +20,9 @@ int main()
 	printf("Sorted array is: ");
 	for(i=0;i<n;i++)
 		printf("%d\t",a[i]);
+		
+	printf("\nTime Complexity: Merge Sort divides the array into two equal halves, recursively sorts each half, and then merges them together. This division and merging process continues until the entire array is sorted. The time complexity is consistently O(n log n) in all cases.\n");
+	printf("Space Complexity: Merge Sort has a space complexity of O(n) for the temporary array used during the merging process.");
 }
 
 void merge(int a[], int l, int mid, int h)
@@ -53,3 +56,5 @@ void mergeSort(int a[], int i, int j)
 		merge(a,i,mid,j);
 	}
 }
+
+
