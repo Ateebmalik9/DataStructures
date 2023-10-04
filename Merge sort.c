@@ -50,7 +50,7 @@ void mergeSort(int a[], int i, int j)
 {
 	if(i<j)
 	{
-		int mid=(i+j)/2;
+		int mid=i+(i+j)/2;
 		mergeSort(a,i,mid);
 		mergeSort(a,mid+1,j);
 		merge(a,i,mid,j);
