@@ -1,4 +1,4 @@
-//evaluation of prefix
+//evaluation of postfix
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
@@ -14,31 +14,21 @@ int evaluate(char opr,int a,int b);
 int main()
 {
 	char expr[100];
-	printf("enter prefix expression with proper spaces between operands and operators: ");
+	printf("enter postfix expression with proper spaces between operands and operators: ");
 	gets(expr);
-	int i,a,b,r,len;
-	i=strlen(expr)-1;
-	
-
-	while(i>=0)
+	strrev(expr);
+	int i=0,a,b,r;
+	while(expr[i]!='\0')
 	{
 		if(expr[i]==' ')
 		{
-			i--;
+			i++;
 			continue;
 		}
 			
 		else if(!isOperator(expr[i]))
 		{
-			int num=0;
-			int multiplier=1;
-			while(expr[i]>='0' && expr[i]<='9')
-			{
-				num=num + (expr[i]-'0')*multiplier;
-				multiplier*=10;
-				i--;
-			}
-			push(num);
+			push(expr[i]-'0');
 		}
 		else
 			{
@@ -48,7 +38,7 @@ int main()
 				printf("a=%d b=%d r=%d\n",a,b,r);
 				push(r);
 			}
-			i--;
+			i=i+1;
 
 	}
 	printf("Result= %d",pop());
@@ -86,4 +76,3 @@ int evaluate(char opr,int a,int b)
 	else if(opr == '%')
 		return a%b;
 }
-
