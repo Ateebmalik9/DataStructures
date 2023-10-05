@@ -4,7 +4,7 @@
 #include<string.h>
 
 char stack[100];
-char pre[100];
+char post[100];
 int top=-1;
 
 void push(char item)
@@ -42,19 +42,20 @@ int main()
 	char expr[100];
 	printf("enter infix expression with proper spaces between operands and operators: ");
 	gets(expr);
-	push('(');
-	int i=strlen(expr)-1,j=0;
-	while(i>=0)
+//	push('(');
+	strrev(expr);
+	int i=0,j=0;
+	while(expr[i]!='\0')
 	{
 		
 		char x=expr[i];
 		if(x==' ')
 		{
-			i--;
+			i++;
 			continue;
 		}
 		
-		else if(x==')')
+		if(x==')')
 		{
 			push(x);
 		}
@@ -64,33 +65,33 @@ int main()
 			while(stack[top]!=')')
 			{
 				char item = pop();
-				pre[j++]=item;	
+				post[j++]=item;	
 			}	
 			pop();
 			
 		}
 		else if(operand(x)==1)
 		{
-			pre[j++]=x;
+			post[j++]=x;
 		}
 		else
 		{
 			while(priority(x)<priority(stack[top]))	
 			{
 				char item =pop();
-				pre[j++]=item;
+				post[j++]=item;
 			}
 			push(x);
 		}
 		
-		i--;
+		i++;
 	}
-	while(top!=0)
+	while(top!=-1)
 	{
-		pre[j++]=pop();
+		post[j++]=pop();
 	}
 	
-	printf("Prefix is: %s",strrev(pre));
+	printf("Prefix is: %s",strrev(post));
 	
 	
 }
