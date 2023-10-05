@@ -27,13 +27,7 @@ int main()
 			
 		else if(!isOperator(expr[i]))
 		{
-			int num=0;
-			while(expr[i]>='0' && expr[i]<='9')
-			{
-				num=num*10 + (expr[i]-'0');
-				i++;
-			}
-			push(num);
+			push(expr[i]-'0');
 		}
 		else
 			{
