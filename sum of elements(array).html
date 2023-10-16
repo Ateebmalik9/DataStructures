@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sum of elements of an array</h1>
+    <script>
+        n=Number(prompt("How many elements are in your array"))
+        var a = new Array(n);
+
+        for(i=0;i<n;i++)
+        {
+            a[i]=Number(prompt("Enter data"));
+        }
+
+        var sum=0;
+        for(i=0;i<n;i++)
+        {
+            sum=sum+a[i];
+        }
+
+        document.write("Sum is "+sum);
+
+    </script>
+</body>
+</html>
